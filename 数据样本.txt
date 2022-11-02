@@ -1,0 +1,57 @@
+注册消息：
+:45:55][2022-10-31 16:44:49] <inf> net_ppp: Initializing PPP to use UART_2
+[16:45:57][2022-10-31 16:44:49] <inf> mqtt_client: Network connected
+[16:45:59][2022-10-31 16:44:49] <inf> mqtt: get System Device Id  4ead9333b015
+[16:46:02][2022-10-31 16:44:49] <wrn> mqtt_client: MQTT state change from (Disconnected) to (Connecting)
+[16:46:04][2022-10-31 16:44:49] <wrn> mqtt_client: MQTT state change from (Connecting) to (Active)
+[16:46:06][2022-10-31 16:44:50] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/reg-req, MSG {"ver":"V1.00.07","model":"XLR_C51","signal":-65}
+[16:46:09][2022-10-31 16:44:51] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b015/reg-resp, MSG {"msgSN":0,"errorCode":0,"data":{"boxCode":"999975","ps":[0,0,0,0,0,0]},"servertime":1667205891}
+[16:46:11][2022-10-31 16:44:51] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/dev-config-req, MSG {"iccid":"898604A6102180111068","pn":8,"mc":7000,"gsm_model":"A7670C-LASS"}
+[16:46:13][2022-10-31 16:44:51] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/query-order-req, MSG {}
+[16:46:16][2022-10-31 16:44:51] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/syscfg_get, MSG {}
+[16:46:18][2022-10-31 16:44:51] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b015/query-order-resp, MSG {"msgSN":0,"errorCode":0,"data":{"sts":["","","","","","","","","",""]},"servertime":1667205891}
+[16:46:21][2022-10-31 16:44:51] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b015/syscfg, MSG {"msgSN":0,"errorCode":0,"data":{"cv":[],"powerOff":1,"ci":[],"ban":"00000000"},"servertime":1667205891}
+[16:46:23][2022-10-31 16:44:51] <inf> CHG: #!Machine data need save, ac_relay_off: on
+
+订单开始消息：
+16:51:19][2022-10-31 16:51:16] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b015/pile-req, MSG {"msgSN":0,"port":8,"op":1,"dcode":"0000000468525094","me":0,"mt":0,"pt":6000,"se":0,"sd":0,"door":1,"pp":3600,"servertime":1667206276}
+[16:51:22][2022-10-31 16:51:16] <inf> xlv_mqtt: Get Pile Order 0000000468525094
+16:51:27][2022-10-31 16:51:24] <inf> CHG_UTILS: [I]
+[16:51:27]0x00:   1441   1274   1280   1281 
+[16:51:30][2022-10-31 16:51:24] <inf> mqtt: PUBLIopic /CHG/4ead9333b015/chg-paca-rep, MSG {"mcode":"9999758","status":"WAITING","cc":1281,"extInt":192,"cv":214735,"dcode":"0000000468525094","dsc":"STA"ele":0,"temp":0}
+[16:51:33][2022-10-31 16:51:24] <inf> CHG: [P8][INF]: enter new state: <CHG_FAST>
+[16:51:36][2022-10-31 16:51:25] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/pile-resp, MSG {"errorCode":0,"dcode":"0000000468525094"}
+[16:51:39][2022-10-31 16:51:25] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/power, MSG {"dcode":"0000000468525094","start":1667206284,"end":1667206284,"power":192,"index":0}
+[16:51:41][2022-10-31 16:51:25] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/chg-data-rep, MSG {"port":8,*status":1,"ele":0,"invol":0,"freeTime":0,"freeDegree":0,"power":192,"errCode":0,"msgSN":0,"dcode":"0000000468525094"}
+[16:51:44][2022-10-31 16:51:25] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/chg-paca-rep, MSG {"mcode":"9999758","status":"CHG_FAST","cc":1286,"extInt":192,"cv":214735,"dcode":"0000000468525094","dsc":"NEW_STA","ele":0,"temp":0}
+[16:51:47]2022-10-31 16:51:25] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b055/chg-data-resp, MSG {"msgSN":0,"errorCode":1,"data":{"port":8,"dcode":"0000000468525094"},"servertime":1667206286}
+[16:53:47][2022-10-31 16:53:45] <inf> CHG_UTILS: [I]
+[16:53:47]0x00:   1271   1293     44      7 
+[16:53:48]Charger Power trickle charge Power 0， Free duration 0s, charger 143s
+[16:53:50][2022-10-31 16:53:47] <inf> CHG: [P8][INF]: Charger switch state check into  current 5 
+[16:53:53][2022-10-31 16:53:47] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/power, MSG {"dcode":"0000000468525094","start":1667206284,"end":1667206427,"power":180,"index":1}
+[16:53:56][2022-10-31 16:53:51] <inf> CHG: [P8][INF]: Charger pull out current 6 , stop charger
+[16:53:59][2022-10-31 16:53:51] <inf> CHG_UTILS: [I]
+[16:53:59]0x00:      4      6      6      6 
+[16:54:02][2022-10-31 16:53:51] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/power, MSG {"dcode":"0000000468525094","start":1667206427,"end":1667206431,"power":0,"index":2}
+
+
+订单数据消息：
+[2022-10-31 17:14:08] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b015/chg-data-resp, MSG {"msgSN":0,"errorCode":1,"data":{"port":8,"dcode":"0000000468525896"},"servertime">1667207649}
+[17:24:10][2022-10-31 17:24:07] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/chg-paca-rep, MSG {"mcode":"9999758","status":"CHG_FAST","cc":1349,"extInt":186,"cv":214643,"dcode":"0000000468525896","dsc":""l"ele":91,"temp":0}
+[17:24:13][2022-10-31 17:24:09] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/chg-data-rep, MSG {"port":8,"status":1,"ele":91,"invol":1800,"freeTime":4,"freeDegree":1,"power":186,"errCode":0,"msgSN":5,"dcode":"0000000468525896"}
+[17:24:16][2022-10-31 17:24:09] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b015/chg-data-resp, MSG {"msgSN":0,"errorCode":1,"data":{"port":8,"dcode":"0000000468525896"},"servertime":1v67208250}
+
+
+订单结束数据：
+[19:07:00][2022-10-31 19:06:56] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/power, MSG {"dcode":"0000000468525896","start":1667210814,"end":1667214416,"power":46,"index":4}
+[19:11:32][2022-10-31 19:11:28] <inf> CHG: [P8][INF]: Charger pull out current 32 , stop charger
+[19:11:35][2022-10-31 19:11:28] <inf> CHG_UTILS: [I]
+[19:11:35]0x00:    181    180    177     32 
+[19:11:39][2022-10-31 19:11:28] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/power, MSG {"dcode":"0000000468525896","start":1667214416,"end":1667214688,"power":24,"index":5}
+[19:11:42][2022-10-31 19:11:28] <inf> CHG: [P8][INF]: enter new state: <END>
+[19:11:45][2022-10-31 19:11:28] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/chg-paca-rep, MSG {"mcode":"9999758","status":"CHG_SLOW","cc":32,"extInt":23,"cv":219947,"dcode":"0000000468525896","dsc":"PULL_OUT","ele":240,"temp":0}
+[19:11:48][2022-10-31 19:11:31] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/chg-data-rep, MSG {"port":8,"status":2,"ele":239,"invol":8242,"freeTime":4,"freeDegree":1,"power":0,"errCode":2,"msgSN":16,"dcode":"0000000468525896"}
+[19:11:51][2022-10-31 19:11:31] <inf> CHG: [P8][INF]: enter new state: <IDLE>
+[19:11:54][2022-10-31 19:11:31] <inf> mqtt: PUBLISH:Topic /CHG/4ead9333b015/chg-paca-rep, MSG {"mcode":"9999758","status":"END","cc":7,"extInt":0,"cv":219970,"dcode":"0000000468525896","dsc":"","ele":240,"temp":0}
+[19:11:57][2022-10-31 19:11:32] <inf> mqtt: Recv Subscribe topic /XLV/4ead9333b015/chg-data-resp, MSG {"msgSN":0,"errorCode":0,"data":{"port":8,"dcode":"0000000468525896"},"servertime":1667214694}
